@@ -1,0 +1,54 @@
+[hub]
+  protocol = https
+
+[core]
+	editor = mvim -f
+	trustctime = false
+	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[user]
+	name = Ethan Bruning
+	email = ebruning@gmail.com
+
+[github]
+  user = ebruning
+
+[push]
+	default = simple
+
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  # lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+[credential]
+	helper = osxkeychain
+
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+
+[diff]
+      # tool = mvimdiff
+      prompt = false
+      tool = kdiff3
+
+[difftool "mvimdiff"]
+      prompt = false
+      cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
