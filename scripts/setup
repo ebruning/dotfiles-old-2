@@ -37,4 +37,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 echo "Installing vim plugins…"
 mvim +PlugUpdate
 
+# Turn off natual scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
 echo "Done."
