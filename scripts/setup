@@ -2,7 +2,7 @@
 # Taken from https://github.com/soffes/dotfiles/
 
 DOTFILES_ROOT="$HOME/.dotfiles"
-
+echo "Starting setup script"
 echo "Changing shell…"
 chsh -s /usr/local/bin/zsh
 
