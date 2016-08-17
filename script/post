@@ -3,7 +3,7 @@
 
 DOTFILES_ROOT="$HOME/.dotfiles"
 echo "--> Starting post setup script"
-echo "Changing shell…"
+echo "--> Changing shell"
 chsh -s /usr/local/bin/zsh
 
 # Turn off natual scrolling
@@ -18,12 +18,15 @@ echo "--> Symlinking bin folder…"
 ln -fs $HOME/.dotfiles/bin $HOME/bin
 
 echo "--> Symlinking config files"
-ln -fs $DOTFILES_ROOT/vimrc $HOME/.vimrc
-ln -fs $DOTFILES_ROOT/gitconfig $HOME/.gitconfig
-ln -fs $DOTFILES_ROOT/gitignore_global $HOME/.gitignore_global
-ln -fs $DOTFILES_ROOT/zshrc $HOME/.zshrc
-ln -fs $DOTFILES_ROOT/gemrc $HOME/.gemrc
-ln -fs $DOTFILES_ROOT/tmux.conf $HOME/.tmux.conf
+FILES=(
+  vimrc
+  gitconfig
+  gitignore_global
+  zshrc
+  gemrc
+  tmux.config
+)
+ln -fs $DOTFILES_ROOT/${FILES[@]} $HOME/.${FILES[@]}
 
 echo "--> Installing oh-my-zsh"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
