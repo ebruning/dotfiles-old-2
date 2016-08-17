@@ -44,7 +44,12 @@ echo "Installing gems…"
 #gem install  ${GEMS[@]}
 
 echo "Installing themes…"
+
 echo "Installing fonts…"
+for i in $DOTFILES_ROOT/fonts/*; do
+  cp -v $i $HOME/Library/Fonts
+done
+
 echo "Installing vim-plug…"
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
