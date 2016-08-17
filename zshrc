@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/dotfiles/oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 HOMEBREW_HOME=/usr/local/bin
 
 # ZSH_THEME="agnoster" #Nice prompt maybe a little busy
