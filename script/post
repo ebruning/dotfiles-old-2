@@ -2,22 +2,22 @@
 # Taken from https://github.com/soffes/dotfiles/
 
 DOTFILES_ROOT="$HOME/.dotfiles"
-echo "Starting setup script"
+echo "--> Starting post setup script"
 echo "Changing shell…"
 chsh -s /usr/local/bin/zsh
 
 # Turn off natual scrolling
-echo "Defaults"
+echo "--> Writing defaults"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-echo "Symlinking macvim…"
+echo "--> Symlinking macvim"
 ln -fs /usr/local/bin/mvim /usr/local/bin/vi
 ln -fs /usr/local/bin/mvim /usr/local/bin/vim
 
-echo "Symlinking bin folder…"
+echo "--> Symlinking bin folder…"
 ln -fs $HOME/.dotfiles/bin $HOME/bin
 
-echo "Symlinking config files"
+echo "--> Symlinking config files"
 ln -fs $DOTFILES_ROOT/vimrc $HOME/.vimrc
 ln -fs $DOTFILES_ROOT/gitconfig $HOME/.gitconfig
 ln -fs $DOTFILES_ROOT/gitignore_global $HOME/.gitignore_global
@@ -25,10 +25,10 @@ ln -fs $DOTFILES_ROOT/zshrc $HOME/.zshrc
 ln -fs $DOTFILES_ROOT/gemrc $HOME/.gemrc
 ln -fs $DOTFILES_ROOT/tmux.conf $HOME/.tmux.conf
 
-echo "Installing Oh-My-ZSH"
+echo "--> Installing oh-my-zsh"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-echo "Installing Ruby…"
+echo "--> Installing Ruby"
 rbenv install 2.3.1
 rbenv global 2.3.1
 
@@ -38,19 +38,20 @@ GEMS=(
     fastlane
     xcpretty
 )
-echo "Installing gems…"
+echo "--> Installing gems"
 rbenv shell 2.3.1
 gem install  ${GEMS[@]}
 
-echo "Installing themes…"
+echo "--> Installing vim themes"
+ln -fs $DOTFILES_ROOT/themes/vim $HOME/.vim/colors 
 
-echo "Installing fonts…"
+echo "--> Installing fonts"
 for i in $DOTFILES_ROOT/fonts/*; do
   cp -v "$i" $HOME/Library/Fonts
 done
 
-echo "Installing vim-plug…"
+echo "--> Installing vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "Installing vim plugins…"
+echo "--> Installing vim plugins"
 mvim +PlugUpdate
