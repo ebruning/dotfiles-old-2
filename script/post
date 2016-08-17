@@ -4,8 +4,8 @@
 DOTFILES_ROOT="$HOME/.dotfiles"
 RUBY_VERSION="2.3.1"
 echo "--> Starting post setup script"
-echo "--> Changing shell"
-chsh -s /usr/local/bin/zsh
+#echo "--> Changing shell"
+#chsh -s /usr/local/bin/zsh
 
 # Turn off natual scrolling
 echo "--> Writing defaults"
@@ -40,7 +40,7 @@ GEMS=(
     xcpretty
 )
 echo "--> Installing gems"
-rbenv shell 2.3.1
+rbenv shell $RUBY_VERSION
 gem install  ${GEMS[@]}
 
 echo "--> Installing vim themes"
