@@ -16,7 +16,6 @@ ln -fs /usr/local/bin/mvim /usr/local/bin/vim
 
 echo "Symlinking bin folder…"
 ln -fs $HOME/.dotfiles/bin $HOME/bin
- exit
 
 echo "Symlinking config files"
 ln -fs $DOTFILES_ROOT/vimrc $HOME/.vimrc
