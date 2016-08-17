@@ -40,8 +40,8 @@ GEMS=(
     xcpretty
 )
 echo "Installing gems…"
-# TODO set rbenv
-#gem install  ${GEMS[@]}
+rbenv shell 2.3.1
+gem install  ${GEMS[@]}
 
 echo "Installing themes…"
 
