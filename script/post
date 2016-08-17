@@ -2,6 +2,7 @@
 # Taken from https://github.com/soffes/dotfiles/
 
 DOTFILES_ROOT="$HOME/.dotfiles"
+RUBY_VERSION="2.3.1"
 echo "--> Starting post setup script"
 echo "--> Changing shell"
 chsh -s /usr/local/bin/zsh
@@ -31,9 +32,9 @@ ln -fs $DOTFILES_ROOT/${FILES[@]} $HOME/.${FILES[@]}
 echo "--> Installing oh-my-zsh"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-echo "--> Installing Ruby"
-rbenv install 2.3.1
-rbenv global 2.3.1
+echo "--> Installing Ruby $RUBY_VERSION"
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
 
 GEMS=(
     bundler
