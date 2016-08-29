@@ -1,0 +1,17 @@
+#!/bin/bash
+# Taken from https://github.com/soffes/dotfiles/
+
+echo "--> Installing Ruby $RUBY_VERSION"
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
+
+GEMS=(
+    bundler
+    cocoapods
+    fastlane
+    xcpretty
+)
+echo "--> Installing gems"
+rbenv shell $RUBY_VERSION
+gem install  ${GEMS[@]}
+
