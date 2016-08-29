@@ -34,6 +34,8 @@ echo "--> Installing Ruby $RUBY_VERSION"
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 
+source $HOME/.zshrc
+
 GEMS=(
     bundler
     cocoapods
