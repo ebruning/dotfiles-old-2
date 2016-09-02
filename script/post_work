@@ -1,11 +1,14 @@
 #!/bin/bash
 
-MICROSOFT=(
+MICROSOFT_CASK=(
   microsoft-office 
   microsoft-lync
-  azure-cli
   remote-desktop-connection
 )
+MICROSOFT_BREW=(
+  azure-cli
+)
 
-brew cask install ${MICROSOFT[@]}
+brew cask install ${MICROSOFT_CASK[@]}
+brew install ${MICROSOFT_BREW[@]}
 
