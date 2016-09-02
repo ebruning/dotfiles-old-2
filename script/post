@@ -59,7 +59,7 @@ GEMS=(
 )
 echo "--> Installing gems"
 rbenv shell $RUBY_VERSION
-gem install  ${GEMS[@]}
+gem install ${GEMS[@]}
 
 echo "--> Installing vim themes"
 ln -fs $DOTFILES_ROOT/themes/vim $HOME/.vim/colors 
