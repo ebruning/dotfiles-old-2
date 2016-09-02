@@ -4,10 +4,7 @@
 DOTFILES_ROOT="$HOME/.dotfiles"
 RUBY_VERSION="2.3.1"
 echo "--> Starting post setup script"
-#echo "--> Changing shell"
-#chsh -s /usr/local/bin/zsh
 
-# Turn off natual scrolling
 echo "--> Writing defaults"
 # Finder
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
