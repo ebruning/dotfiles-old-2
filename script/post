@@ -62,7 +62,9 @@ rbenv shell $RUBY_VERSION
 gem install ${GEMS[@]}
 
 echo "--> Installing vim themes"
-ln -fs $DOTFILES_ROOT/themes/vim $HOME/.vim/colors 
+for i in $DOTFILES_ROOT/themes/vim/*; do
+  ln -fs "$i" $HOME/.vim/colors
+done
 
 echo "--> Installing fonts"
 for i in $DOTFILES_ROOT/fonts/*; do
