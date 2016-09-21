@@ -5,6 +5,12 @@ DOTFILES_ROOT="$HOME/.dotfiles"
 RUBY_VERSION="2.3.1"
 echo "--> Starting post setup script"
 
+# Set hostname
+printf "Enter computer name: "
+read -r name
+sudo scutil --set LocalHostName $name
+sudo scutil --set ComputerName $name
+
 echo "--> Writing defaults"
 # Finder
 # Natural scroll
