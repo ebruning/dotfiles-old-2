@@ -27,7 +27,7 @@ export GIT_URL="git://git@bitbucket.org:kofax/match.git"
 
 # android variables
 # export ANDROID_SDK="/Users/ethan/Library/Android/sdk"
-export ANDROID_SDK="/Users/ethan/android-sdks"
+export ANDROID_SDK="/Users/ethan/Library/Android/sdk/"
 export ANDROID_SDK_HOME="$HOME/"
 
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
