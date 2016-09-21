@@ -10,6 +10,7 @@ printf "Enter computer name: "
 read -r name
 sudo scutil --set LocalHostName $name
 sudo scutil --set ComputerName $name
+sudo scutil --set HostName $name
 
 echo "--> Writing defaults"
 # Finder
