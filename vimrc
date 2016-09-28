@@ -68,6 +68,7 @@ set nobackup
 set noswapfile
 filetype plugin indent on
 set splitright
+set splitbelow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Configurations                                                      "
