@@ -43,6 +43,8 @@ Plug 'scrooloose/nerdtree'
 " Swift
 Plug 'keith/swift.vim'
 
+" Notes
+Plug 'xolox/vim-notes'
 
 call plug#end()
 
@@ -65,6 +67,7 @@ set encoding=utf-8
 set nobackup
 set noswapfile
 filetype plugin indent on
+set splitright
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Configurations                                                      "
@@ -208,6 +211,12 @@ let g:gitgutter_highlight_lines = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width=80
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Notes                                                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:notes_directories = ['$HOME/Dropbox/notes']
+let g:notes_suffix = '.txt'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling                                                                "
