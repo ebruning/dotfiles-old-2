@@ -28,6 +28,8 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.dock minimize-to-application -bool true
 # Put dock on the left
 defaults write com.apple.dock orientation left
+# Auto-hide dock
+defaults write com.apple.dock autohide-time-modifier -int 0
 
 # Modifier Keys
 # Set caps lock to control
