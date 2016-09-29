@@ -36,6 +36,7 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-627-0 -ar
 echo "--> Symlinking macvim"
 ln -fs /usr/local/bin/mvim /usr/local/bin/vi
 ln -fs /usr/local/bin/mvim /usr/local/bin/vim
+ln -fs /usr/local/opt/macvim/bin/mvim /usr/local/bin/mvim
 
 echo "--> Symlinking bin folder…"
 ln -fs $HOME/.dotfiles/bin $HOME/bin
