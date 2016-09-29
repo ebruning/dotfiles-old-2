@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-HOMEBREW_HOME=/usr/local/bin
+HOMEBREW_HOME=/usr/local
 
 # ZSH_THEME="agnoster" #Nice prompt maybe a little busy
 # ZSH_THEME="bira" 
@@ -34,10 +34,10 @@ export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Alias
-[ -f "$HOMEBREW_HOME/mvim" ] && alias v="vimer -t"
+[ -d "$HOMEBREW_HOME/opt/macvim/MacVim.app" ] && alias v="vimer -t"
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
-[ -f "$HOMEBREW_HOME/hub" ] && alias git=hub
-[ -f "$HOMEBREW_HOME/emacs" ] && alias e='open /Applications/Emacs.app $1'
+[ -f "$HOMEBREW_HOME/bin/hub" ] && alias git=hub
+[ -f "$HOMEBREW_HOME/bin/emacs" ] && alias e='open /Applications/Emacs.app $1'
 
 unsetopt correctall
 
