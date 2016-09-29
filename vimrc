@@ -46,6 +46,9 @@ Plug 'keith/swift.vim'
 " Notes
 Plug 'xolox/vim-notes'
 
+" Handlebars
+Plug 'mustache/vim-mustache-handlebars'
+
 call plug#end()
 
 color sorcerer
