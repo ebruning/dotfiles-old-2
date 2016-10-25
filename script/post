@@ -35,6 +35,23 @@ defaults write com.apple.dock autohide-time-modifier -int 0
 # Set caps lock to control
 defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-627-0 -array-add '<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
 
+# firewall
+defaults -currentHost write ~/Library/Preferences/com.apple.alf globalstate -bool true
+
+# Password screensaver
+defaults write /Library/Preferences/com.apple.screensaver askForPassword -bool true
+
+# stealth mode
+defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+defaults write ~/Library/Preferences/com.apple.alf stealthenabled -bool true
+
+# white list apple apps
+defaults -currentHost write /Library/Preferences/com.apple.alf allowsignedenabled -bool false
+defaults -currentHost write ~/Library/Preferences/com.apple.alf allowsignedenabled -bool false
+
+# disable internet sharing
+defaults write /Library/Preferences/SystemConfiguration/com.apple.nat NAT -dict-add Enabled -bool false
+
 # Fix macOS BS
 sudo spctl --master-disable
 
