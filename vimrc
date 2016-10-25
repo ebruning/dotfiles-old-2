@@ -39,7 +39,7 @@ Plug 'honza/vim-snippets'
 
 " NerdTree
 Plug 'scrooloose/nerdtree'
-
+Plug 'jistr/vim-nerdtree-tabs'
 " Swift
 Plug 'keith/swift.vim'
 
@@ -49,9 +49,13 @@ Plug 'xolox/vim-notes'
 " Handlebars
 Plug 'mustache/vim-mustache-handlebars'
 
+" Theme
+Plug 'alessandroyorba/despacio'
+
 call plug#end()
 
-color sorcerer
+" color sorcerer
+color despacio
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
