@@ -203,6 +203,7 @@ fabric.properties
 MobileSDK.framework
 SDKStrings.bundle
 uiimages.bundle
+kfxEVRS_License.h
 
 # Tags
 .tags
