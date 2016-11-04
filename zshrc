@@ -6,8 +6,9 @@ HOMEBREW_HOME=/usr/local
 # ZSH_THEME="bira" 
 # ZSH_THEME="agnoster" 
 # ZSH_THEME="avit" 
-ZSH_THEME="simple" 
 # ZSH_THEME="sorin" 
+# ZSH_THEME="simple" 
+ZSH_THEME="dpoggi" 
 
 plugins=(osx brew vagrant zsh-completions gem)
 

@@ -83,8 +83,8 @@ set splitbelow
 :let mapleader = " "                   " Change the leader key to space
 map <Leader>j :%!python -m json.tool<CR> " Set 'j to format a json file
 set pastetoggle=<F4>
-:nmap <F1> :Explore<CR>
-:imap <F1> <Esc>:Explore<CR>
+" :nmap <F1> :Explore<CR>
+" :imap <F1> <Esc>:Explore<CR>
 :nnoremap <CR> :nohlsearch<cr>
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
