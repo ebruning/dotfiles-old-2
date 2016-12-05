@@ -10,6 +10,8 @@ HOMEBREW_HOME=/usr/local
 # ZSH_THEME="simple" 
 ZSH_THEME="dpoggi" 
 
+TERM=xterm-256color
+
 plugins=(osx brew vagrant zsh-completions gem)
 
 source $ZSH/oh-my-zsh.sh
