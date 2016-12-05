@@ -1,75 +1,73 @@
-# Path to your oh-my-zsh configuration.
+
+# General settings
 ZSH=$HOME/.oh-my-zsh
-HOMEBREW_HOME=/usr/local
-
-# ZSH_THEME="agnoster" #Nice prompt maybe a little busy
-# ZSH_THEME="bira" 
-# ZSH_THEME="agnoster" 
-# ZSH_THEME="avit" 
-# ZSH_THEME="sorin" 
-# ZSH_THEME="simple" 
-ZSH_THEME="dpoggi" 
-
 TERM=xterm-256color
-
-plugins=(osx brew vagrant zsh-completions gem)
-
+ZSH_THEME="dpoggi" 
 source $ZSH/oh-my-zsh.sh
-
 set -o vi
-
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export EDITOR="mvim -f"
-
-# fastlane variables
-export DELIVER_USER="ebruning@gmail.com"
-export FASTLANE_TEAM_ID="GEF98ZHGFB"
-export XCODE_INSTALL_PASSWORD=
-export XCODE_INSTALL_USER=ebruning@gmail.com
-export GIT_URL="git://git@bitbucket.org:kofax/match.git"
-
-# android variables
-# export ANDROID_SDK="/Users/ethan/Library/Android/sdk"
-export ANDROID_SDK="$HOME/Library/Android/sdk/"
-export ANDROID_SDK_HOME="$HOME/"
-
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# Alias
-[ -d "$HOMEBREW_HOME/opt/macvim/MacVim.app" ] && alias v="vimer -t"
-[ -d "$HOME/Applications/Atom.app" ] && alias a=atom
-[ -f "$HOMEBREW_HOME/bin/hub" ] && alias git=hub
-[ -f "$HOMEBREW_HOME/bin/emacs" ] && alias e='open /Applications/Emacs.app $1'
-
 unsetopt correctall
 
-# RBENV
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+case "$(uname -s)" in
+# Mac specific
+   Darwin)
+    HOMEBREW_HOME=/usr/local
+    plugins=(osx brew vagrant zsh-completions gem)
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-function xc {
-    xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
+    # fastlane variables
+    export DELIVER_USER="ebruning@gmail.com"
+    export FASTLANE_TEAM_ID="GEF98ZHGFB"
+    export XCODE_INSTALL_PASSWORD=
+    export XCODE_INSTALL_USER=ebruning@gmail.com
+    export GIT_URL="git://git@bitbucket.org:kofax/match.git"
 
-    if [[ `echo -n $xcode_proj | wc -m` == 0 ]]
-    then
+    # android variables
+    export ANDROID_SDK="$HOME/Library/Android/sdk/"
+    export ANDROID_SDK_HOME="$HOME/"
+
+    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
+    fpath=(/usr/local/share/zsh-completions $fpath)
+
+    # RBENV
+    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+    function xc {
+      xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
+
+      if [[ `echo -n $xcode_proj | wc -m` == 0 ]]
+      then
         echo "No xcworkspace/xcodeproj file found in the current directory."
-    else
+      else
         open "$xcode_proj"
-    fi
-}
+      fi
+    }
 
-function dnsflush {
-  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
-  sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
-}
+    function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
-function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
+    function build_project {
+      xcbuild |xcpretty 
+    }
 
-function build_project {
- xcbuild |xcpretty 
-}
+    # Google Cloud SDK
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
-# Google Cloud SDK
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+    # Alias
+    [ -d "$HOMEBREW_HOME/opt/macvim/MacVim.app" ] && alias v="vimer -t"
+    [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
+    [ -f "$HOMEBREW_HOME/bin/hub" ] && alias git=hub
+    [ -f "$HOMEBREW_HOME/bin/emacs" ] && alias e='open /Applications/Emacs.app $1'
+
+    export EDITOR="mvim -f"
+  ;;
+# Linux specific
+  Linux)
+    plugins=(debian)
+  ;;
+  CYGWIN*|MINGW32*|MSYS*)
+    echo 'MS Windows'
+  ;;
+  *) 
+    echo 'other OS' 
+  ;;
+      esac
