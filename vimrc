@@ -55,7 +55,8 @@ Plug 'alessandroyorba/despacio'
 call plug#end()
 
 " color sorcerer
-color despacio
+" color despacio
+color apprentice
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -288,7 +289,7 @@ let g:UltiSnipsEditSplit="vertical"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unite                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-p> [unite]p
+"map <C-p> [unite]p
 
 " XML formatter
 function! DoFormatXML() range
