@@ -31,17 +31,6 @@ case "$(uname -s)" in
     # RBENV
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-    function xc {
-      xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
-
-      if [[ `echo -n $xcode_proj | wc -m` == 0 ]]
-      then
-        echo "No xcworkspace/xcodeproj file found in the current directory."
-      else
-        open "$xcode_proj"
-      fi
-    }
-
     function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
     function build_project {
