@@ -54,9 +54,7 @@ Plug 'alessandroyorba/despacio'
 
 call plug#end()
 
-" color sorcerer
-" color despacio
-color apprentice
+color sourcerer
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
