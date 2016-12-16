@@ -1,4 +1,3 @@
-
 # General settings
 ZSH=$HOME/.oh-my-zsh
 TERM=xterm-256color
