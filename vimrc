@@ -9,37 +9,30 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'sjl/gundo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
 Plug 'tpope/vim-dispatch'
 Plug 'pangloss/vim-javascript'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'craigemery/vim-autotag'
-Plug 'xolox/vim-easytags'
+"Plug 'xolox/vim-easytags'
+"Plug 'sjl/gundo.vim'
 
 " Markdown
 Plug 'tpope/vim-markdown'
 " Plug 'suan/vim-instant-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
 
-" Unite
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/unite.vim'
-Plug 'rstacruz/vim-fastunite'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/unite-outline'
-Plug 'tsukkee/unite-tag'
-
 " Completion
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
 " NerdTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+
 " Swift
 Plug 'keith/swift.vim'
 
@@ -50,15 +43,23 @@ Plug 'xolox/vim-notes'
 Plug 'mustache/vim-mustache-handlebars'
 
 " Theme
-Plug 'alessandroyorba/despacio'
+"Plug 'alessandroyorba/despacio'
+Plug 'google/vim-colorscheme-primary'
+Plug 'metalelf0/base16-black-metal-scheme'
+Plug 'fenetikm/falcon'
 
 call plug#end()
 
-color sourcerer
+color falcon
+" color sourcerer
+" colorscheme primary
+" colorscheme leo
+" color base16-black-metal-dark-funeral
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set termguicolors
 set number
 set guifont=Hack:h14 
 syntax enable
@@ -66,6 +67,7 @@ set background=dark
 set laststatus=2
 " set textwidth=80                              " Forces screen size
 highlight SignColumn guibg=black              " Set the gutter/sign to black
+set t_Co=256
 
 set nocompatible                " Do not act like vi
 set encoding=utf-8
