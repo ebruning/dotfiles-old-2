@@ -10,7 +10,7 @@ case "$(uname -s)" in
 # Mac specific
    Darwin)
     HOMEBREW_HOME=/usr/local
-    plugins=(osx brew vagrant zsh-completions gem)
+    plugins=(osx brew gem vagrant zsh-completions)
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
     # fastlane variables
@@ -24,7 +24,18 @@ case "$(uname -s)" in
     export ANDROID_SDK="$HOME/Library/Android/sdk/"
     export ANDROID_SDK_HOME="$HOME/"
 
-    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
+    # notwaldorf/tiny-care-terminal
+    export TTC_REPOS='~/projects/shadow-war-armageddon-roster'
+    export TTC_WEATHER='92832'
+    export TTC_CELSIUS=false
+    export TTC_CONSUMER_KEY='XvwwSk7xAQdTot0DBWZnptT9V'
+    export TTC_CONSUMER_SECRET='4EELKBAHG5jTfUT6fmXcKN52NuffPkNEfzcktP79NHtImn0uR3'
+    export TTC_ACCESS_TOKEN='26911148-eiGVcbD3l59dMFMTxyrGiXx75TQlvQ1ddMSsRBOAn'
+    export TTC_ACCESS_TOKEN_SECRET='slqfyOlse2sRrZuOWu76XtzFdxyDx0GeAUY7w9XPPdHCH'
+    export TTC_SAY_BOX=bird
+    export TTC_BOTS='tinycarebot,KHDMDCM,Puget_Houston'
+
+    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:/usr/local/opt/python@2/bin:$PATH"
     fpath=(/usr/local/share/zsh-completions $fpath)
 
     # RBENV
@@ -58,4 +69,7 @@ case "$(uname -s)" in
   *) 
     echo 'other OS' 
   ;;
-      esac
+ esac
+
+# old node
+export PATH="/usr/local/opt/node@8/bin:$PATH"
