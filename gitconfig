@@ -6,10 +6,11 @@
 	trustctime = false
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
+#	autocrlf = true
 
 [user]
 	name = Ethan Bruning
-	email = ebruning@gmail.com
+	email = ethan.bruning@kofax.com
 
 [github]
   user = ebruning
@@ -30,9 +31,10 @@
 	required = true
 
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
+	process = git-lfs filter-process
 	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 
 [diff]
       # tool = mvimdiff
