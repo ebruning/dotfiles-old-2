@@ -9,37 +9,25 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'sjl/gundo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
 Plug 'tpope/vim-dispatch'
 Plug 'pangloss/vim-javascript'
-Plug 'majutsushi/tagbar'
 Plug 'craigemery/vim-autotag'
-Plug 'xolox/vim-easytags'
 
 " Markdown
 Plug 'tpope/vim-markdown'
-" Plug 'suan/vim-instant-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
 
-" Unite
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/unite.vim'
-Plug 'rstacruz/vim-fastunite'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/unite-outline'
-Plug 'tsukkee/unite-tag'
-
 " Completion
-"Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
 " NerdTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+
 " Swift
 Plug 'keith/swift.vim'
 
@@ -50,16 +38,23 @@ Plug 'xolox/vim-notes'
 Plug 'mustache/vim-mustache-handlebars'
 
 " Theme
-Plug 'alessandroyorba/despacio'
+"Plug 'alessandroyorba/despacio'
+Plug 'google/vim-colorscheme-primary'
+Plug 'metalelf0/base16-black-metal-scheme'
+Plug 'fenetikm/falcon'
 
 call plug#end()
 
-" color sorcerer
-color despacio
+color falcon
+" color sourcerer
+" colorscheme primary
+" colorscheme leo
+" color base16-black-metal-dark-funeral
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set termguicolors
 set number
 set guifont=Hack:h14 
 syntax enable
@@ -67,6 +62,7 @@ set background=dark
 set laststatus=2
 " set textwidth=80                              " Forces screen size
 highlight SignColumn guibg=black              " Set the gutter/sign to black
+set t_Co=256
 
 set nocompatible                " Do not act like vi
 set encoding=utf-8
@@ -272,6 +268,11 @@ map <F1> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" let g:nerdtree_tabs_open_on_gui_startup=1
+" Start NERDTree
+autocmd VimEnter * NERDTree
+" Jump to the main window.
+autocmd VimEnter * wincmd p
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
@@ -288,7 +289,7 @@ let g:UltiSnipsEditSplit="vertical"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unite                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-p> [unite]p
+"map <C-p> [unite]p
 
 " XML formatter
 function! DoFormatXML() range
