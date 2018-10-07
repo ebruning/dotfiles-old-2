@@ -14,19 +14,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
 Plug 'tpope/vim-dispatch'
 Plug 'pangloss/vim-javascript'
-"Plug 'majutsushi/tagbar'
 Plug 'craigemery/vim-autotag'
-"Plug 'xolox/vim-easytags'
-"Plug 'sjl/gundo.vim'
 
 " Markdown
 Plug 'tpope/vim-markdown'
-" Plug 'suan/vim-instant-markdown'
-" Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 " Completion
-"Plug 'Valloric/YouCompleteMe'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
@@ -182,7 +177,7 @@ augroup END
 set noerrorbells visualbell t_vb=
 
 "" UltiSnips is missing a setf trigger for snippets on BufEnter
-"autocmd vimrc BufEnter *.snippets setf snippets
+" autocmd vimrc BufEnter *.snippets setf snippets
 
 " In UltiSnips snippet files, we want actual tabs instead of spaces for indents.
 " US will use those tabs and convert them to spaces if expandtab is set when the
@@ -288,8 +283,8 @@ autocmd VimEnter * wincmd p
 " UltiSnips                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<right>"
 let g:UltiSnipsJumpBackwardTrigger="<left>"
 

@@ -6,6 +6,33 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
 
+# RBENV
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+function xc {
+    xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
+
+    if [[ `echo -n $xcode_proj | wc -m` == 0 ]]
+    then
+        echo "No xcworkspace/xcodeproj file found in the current directory."
+    else
+        open "$xcode_proj"
+    fi
+}
+
+function dnsflush {
+  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+  sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+}
+
+function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
+
+function build_project {
+ xcbuild |xcpretty 
+}
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 case "$(uname -s)" in
 # Mac specific
    Darwin)
@@ -71,6 +98,3 @@ case "$(uname -s)" in
     echo 'other OS' 
   ;;
  esac
-
-# old node
-export PATH="/usr/local/opt/node@8/bin:$PATH"
