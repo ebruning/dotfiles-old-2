@@ -68,3 +68,7 @@ function build_project {
  xcbuild |xcpretty 
 }
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Go settings
+export GOPATH=/Users/ethan/go
+export PATH=$GOPATH/bin:$PATH
