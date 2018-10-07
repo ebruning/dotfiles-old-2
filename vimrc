@@ -22,7 +22,8 @@ Plug 'craigemery/vim-autotag'
 " Markdown
 Plug 'tpope/vim-markdown'
 " Plug 'suan/vim-instant-markdown'
-Plug 'JamshedVesuna/vim-markdown-preview'
+" Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'skywind3000/asyncrun.vim'
 
 " Completion
 "Plug 'Valloric/YouCompleteMe'
@@ -47,14 +48,18 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'google/vim-colorscheme-primary'
 Plug 'metalelf0/base16-black-metal-scheme'
 Plug 'fenetikm/falcon'
+Plug 'bluz71/vim-moonfly-colors'
+Plug 'KKPMW/sacredforest-vim'
 
 call plug#end()
 
-color falcon
-" color sourcerer
+" color falcon
+color sourcerer
 " colorscheme primary
 " colorscheme leo
 " color base16-black-metal-dark-funeral
+" color moonfly
+" color sacredforest
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -96,8 +101,8 @@ if has("gui_macvim")
   set macmeta
 endif
 
-" Silver searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" Markdown
+autocmd FileType markdown :AsyncRun octodown %
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " White Space and Tabs                                                    "

@@ -22,6 +22,7 @@ case "$(uname -s)" in
 
     # android variables
     export ANDROID_SDK="$HOME/Library/Android/sdk/"
+    export ANDROID_HOME=$ANDROID_SDK
     export ANDROID_SDK_HOME="$HOME/"
 
     # notwaldorf/tiny-care-terminal
