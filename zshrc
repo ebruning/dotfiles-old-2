@@ -39,6 +39,7 @@ case "$(uname -s)" in
     HOMEBREW_HOME=/usr/local
     plugins=(osx brew gem vagrant zsh-completions)
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+    export FLUTTER_ROOT=/Users/ethan/bin/flutter
 
     # fastlane variables
     export DELIVER_USER="ebruning@gmail.com"
@@ -63,7 +64,7 @@ case "$(uname -s)" in
     export TTC_SAY_BOX=bird
     export TTC_BOTS='tinycarebot,KHDMDCM,Puget_Houston'
 
-    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:/usr/local/opt/python@2/bin:$PATH"
+    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:/usr/local/opt/python@2/bin:/Users/ethan/bin/flutter/bin:$PATH"
     fpath=(/usr/local/share/zsh-completions $fpath)
 
     # RBENV
