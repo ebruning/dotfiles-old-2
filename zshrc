@@ -1,8 +1,8 @@
 # General settings
 ZSH=$HOME/.oh-my-zsh
 TERM=xterm-256color
-#ZSH_THEME="dpoggi" 
-ZSH_THEME="kolo" 
+ZSH_THEME="dpoggi" 
+#ZSH_THEME="kolo" 
 source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
