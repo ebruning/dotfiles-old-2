@@ -1,7 +1,8 @@
 # General settings
 ZSH=$HOME/.oh-my-zsh
 TERM=xterm-256color
-ZSH_THEME="dpoggi" 
+#ZSH_THEME="dpoggi" 
+ZSH_THEME="kolo" 
 source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
@@ -37,8 +38,8 @@ case "$(uname -s)" in
 # Mac specific
    Darwin)
     HOMEBREW_HOME=/usr/local
-    plugins=(osx brew gem vagrant zsh-completions)
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+    plugins=(osx gem  zsh-completions)
+    #export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
     export FLUTTER_ROOT=/Users/ethan/bin/flutter
 
     # fastlane variables
