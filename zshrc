@@ -65,16 +65,6 @@ case "$(uname -s)" in
     export ANDROID_HOME=$ANDROID_SDK
     export ANDROID_SDK_HOME="$HOME/"
 
-    # notwaldorf/tiny-care-terminal
-    export TTC_REPOS='~/projects/shadow-war-armageddon-roster'
-    export TTC_WEATHER='92832'
-    export TTC_CELSIUS=false
-    export TTC_CONSUMER_KEY='XvwwSk7xAQdTot0DBWZnptT9V'
-    export TTC_CONSUMER_SECRET='4EELKBAHG5jTfUT6fmXcKN52NuffPkNEfzcktP79NHtImn0uR3'
-    export TTC_ACCESS_TOKEN='26911148-eiGVcbD3l59dMFMTxyrGiXx75TQlvQ1ddMSsRBOAn'
-    export TTC_ACCESS_TOKEN_SECRET='slqfyOlse2sRrZuOWu76XtzFdxyDx0GeAUY7w9XPPdHCH'
-    export TTC_SAY_BOX=bird
-    export TTC_BOTS='tinycarebot,KHDMDCM,Puget_Houston'
 
     export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:/usr/local/opt/python@2/bin:/Users/ethan/bin/flutter/bin:$PATH"
     fpath=(/usr/local/share/zsh-completions $fpath)
