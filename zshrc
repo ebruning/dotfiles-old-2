@@ -41,39 +41,8 @@ case "$(uname -s)" in
     plugins=(osx gem  zsh-completions)
    
     # Customise the Powerlevel9k prompts
-    # POWERLEVEL9K_MODE='nerdfont-complete'
-    # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
-    # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-    # POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-    POWERLEVEL9K_BATTERY_STAGES="▁▂▃▄▅▆▇█"
-
-
-    # prompt section
-    # JavaScript
-    POWERLEVEL9K_CUSTOM_JAVASCRIPT="echo -n '\ue781' JavaScript"
-    POWERLEVEL9K_CUSTOM_JAVASCRIPT_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_JAVASCRIPT_BACKGROUND="yellow"
-
-    # Ruby
-    POWERLEVEL9K_CUSTOM_RUBY="echo -n '\ue21e' Ruby"
-    POWERLEVEL9K_CUSTOM_RUBY_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_RUBY_BACKGROUND="red"
-
-    # Python
-    POWERLEVEL9K_CUSTOM_PYTHON="echo -n '\uf81f' Python"
-    POWERLEVEL9K_CUSTOM_PYTHON_FOREGROUND="black"
-    POWERLEVEL9K_CUSTOM_PYTHON_BACKGROUND="blue"
-
-    # Customise the Powerlevel9k prompts
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-        battery
-        ssh
-        newline
-        dir
-        custom_javascript 
-        vcs
-        newline
-    )
+    POWERLEVEL9K_MODE='nerdfont-complete'
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
     POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
