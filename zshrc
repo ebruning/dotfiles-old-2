@@ -39,7 +39,7 @@ case "$(uname -s)" in
    Darwin)
     HOMEBREW_HOME=/usr/local
     plugins=(osx gem  zsh-completions)
-    #export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+    export JAVA_HOME=`/usr/libexec/java_home`
     export FLUTTER_ROOT=/Users/ethan/bin/flutter
 
     # fastlane variables
