@@ -39,9 +39,17 @@ case "$(uname -s)" in
    Darwin)
     HOMEBREW_HOME=/usr/local
     plugins=(osx gem  zsh-completions)
-    export JAVA_HOME=`/usr/libexec/java_home`
+   
+    # Customise the Powerlevel9k prompts
+    POWERLEVEL9K_MODE='nerdfont-complete'
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+    POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+    POWERLEVEL9K_MODE='nerdfont-complete'
+    source ~/powerlevel9k/powerlevel9k.zsh-theme
     export FLUTTER_ROOT=/Users/ethan/bin/flutter
-
+    export JAVA_HOME=`/usr/libexec/java_home`
+    
     # fastlane variables
     export DELIVER_USER="ebruning@gmail.com"
     export FASTLANE_TEAM_ID="GEF98ZHGFB"
