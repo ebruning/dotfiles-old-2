@@ -7,8 +7,6 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
 
-# RBENV
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 function xc {
     xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
