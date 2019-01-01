@@ -7,21 +7,20 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
 
-# Customise the Powerlevel9k prompts
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
-# Load Nerd Fonts with Powerlevel9k theme for Zsh
-POWERLEVEL9K_MODE='nerdfont-complete'
-source ~/.powerlevel9k/powerlevel9k.zsh-theme
-
 case "$(uname -s)" in
 # Mac specific
    Darwin)
     HOMEBREW_HOME=/usr/local
     plugins=(osx gem  zsh-completions)
+
+    # Customise the Powerlevel9k prompts
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+    POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+    # Load Nerd Fonts with Powerlevel9k theme for Zsh
+    POWERLEVEL9K_MODE='nerdfont-complete'
+    source ~/.powerlevel9k/powerlevel9k.zsh-theme
     
     export FLUTTER_ROOT=/Users/ethan/bin/flutter
     export JAVA_HOME=`/usr/libexec/java_home`
