@@ -56,7 +56,6 @@ xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
-*.ipa
 
 ## Playgrounds
 timeline.xctimeline
@@ -122,7 +121,7 @@ xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
-*.ipa
+#*.ipa
 
 # CocoaPods
 #
@@ -200,10 +199,10 @@ crashlytics-build.properties
 fabric.properties
 
 # Kofax frameworks
-MobileSDK.framework
-SDKStrings.bundle
-uiimages.bundle
-kfxEVRS_License.h
+#MobileSDK.framework
+#SDKStrings.bundle
+#uiimages.bundle
+#kfxEVRS_License.h
 
 # Tags
 .tags
