@@ -45,17 +45,19 @@ Plug 'metalelf0/base16-black-metal-scheme'
 Plug 'fenetikm/falcon'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'KKPMW/sacredforest-vim'
+Plug 'xero/sourcerer.vim'
+Plug 'Nequo/vim-allomancer' 
 
 call plug#end()
 
 " color falcon
-color sourcerer
 " colorscheme primary
 " colorscheme leo
 " color base16-black-metal-dark-funeral
 " color moonfly
 " color sacredforest
-
+" color sourcerer
+color allomancer
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
