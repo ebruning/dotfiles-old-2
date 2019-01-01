@@ -62,7 +62,7 @@ case "$(uname -s)" in
     export TTC_SAY_BOX=bird
     export TTC_BOTS='tinycarebot,KHDMDCM,Puget_Houston'
 
-    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:/usr/local/opt/python@2/bin:$PATH"
+    export PATH="/usr/local/opt/python/libexec/bin:$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
     fpath=(/usr/local/share/zsh-completions $fpath)
 
     # RBENV
