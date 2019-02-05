@@ -1,8 +1,8 @@
 # General settings
 ZSH=$HOME/.oh-my-zsh
 TERM=xterm-256color
-ZSH_THEME="dpoggi" 
-#ZSH_THEME="kolo" 
+ZSH_THEME="dpoggi"
+#ZSH_THEME="kolo"
 source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
@@ -23,10 +23,10 @@ case "$(uname -s)" in
     # Load Nerd Fonts with Powerlevel9k theme for Zsh
     POWERLEVEL9K_MODE='nerdfont-complete'
     source ~/.powerlevel9k/powerlevel9k.zsh-theme
-    
+
     export FLUTTER_ROOT=/Users/ethan/bin/flutter
     export JAVA_HOME=`/usr/libexec/java_home`
-    
+
     # fastlane variables
     export DELIVER_USER="ebruning@gmail.com"
     export FASTLANE_TEAM_ID="GEF98ZHGFB"
@@ -39,8 +39,8 @@ case "$(uname -s)" in
     export ANDROID_HOME=$ANDROID_SDK
     export ANDROID_SDK_HOME="$HOME/"
 
+    export PATH="/usr/local/opt/python/libexec/bin:$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
 
-    export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:/usr/local/opt/python@2/bin:/Users/ethan/bin/flutter/bin:$PATH"
     fpath=(/usr/local/share/zsh-completions $fpath)
 
     # RBENV
@@ -49,7 +49,7 @@ case "$(uname -s)" in
     function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
     function build_project {
-      xcbuild |xcpretty 
+      xcbuild |xcpretty
     }
 
     function convert_md_word() {
@@ -83,7 +83,7 @@ case "$(uname -s)" in
     function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
     function build_project {
-     xcbuild |xcpretty 
+     xcbuild |xcpretty
     }
   ;;
 # Linux specific
@@ -93,7 +93,7 @@ case "$(uname -s)" in
   CYGWIN*|MINGW32*|MSYS*)
     echo 'MS Windows'
   ;;
-  *) 
-    echo 'other OS' 
+  *)
+    echo 'other OS'
   ;;
  esac
