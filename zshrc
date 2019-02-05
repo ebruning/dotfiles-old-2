@@ -7,6 +7,8 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 unsetopt correctall
 
+alias youtubedl="youtube-dl --add-metadata --write-all-thumbnails --embed-thumbnail --write-info-json --embed-subs --all-subs"
+
 case "$(uname -s)" in
 # Mac specific
    Darwin)
@@ -48,6 +50,11 @@ case "$(uname -s)" in
 
     function build_project {
       xcbuild |xcpretty 
+    }
+
+    function convert_md_word() {
+      filename=$1
+      pandoc -o  ${filename:t:r}.docx -f markdown -t docx $1
     }
 
     # Google Cloud SDK
